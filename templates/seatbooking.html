@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Select Your Seats</title>
+</head>
+<body>
+	<center>
+		<form method="POST" action>
+		{% for dict in seats %}
+		<br>
+			{% for seat,status in dict.items() %}
+				{% if status == 1 %}
+					<input type="checkbox" name="seatmatrix" value="{{ seat }}" onclick="return false;"/>{{ seat }} (Not Available)
+				{% else %}
+					<input type="checkbox" name="seatmatrix" value="{{ seat }}">{{ seat }}
+					&nbsp;
+				{% endif %}
+			{% endfor %}
+		{% endfor %}
+		<br>
+		<input type="submit" value="Submit">
+		</form>
+	</center>
+</body>
+</html>

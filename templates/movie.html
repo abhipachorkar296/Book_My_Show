@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ movie_info[0]['Name'] }}</title>
+</head>
+<body>
+	<center><h1>{{ movie_info[0]['Name'] }}</h1></center>
+	<br><br>
+	<img src="{{ filename }}" align="left" height="400" width="400" >
+	<p>Description: {{ movie_info[0]['Description'] }}</p>
+	<br>
+	<p>Cast: {{ movie_info[0]['Cast'] }}</p>
+	<br>
+	<p>Rating: {{ rating }}/5</p>
+	<br>
+	<p>Language: {{ movie_info[0]['Language'] }}</p>
+	<br><br><br>
+	<h3>Theatres:</h3><br>
+	<ul>
+		{% for i in range(0,l) %}
+			<li>
+				<h3>{{ theatre_names[i] }}</h3>
+				<br>
+				{% for j in range(0,lengths[i]) %}
+					<a href="http://localhost:5000/{{ name }}/movie/{{ movie_info[0]['Name'] }}/{{ theatres[i] }}/{{ final[i][j] }}">{{ final[i][j] }}</a>
+					&nbsp;
+				{% endfor %}
+			</li>
+		{% endfor %}
+	</ul>
+</body>
+</html>

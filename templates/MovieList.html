@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Movies List for this week</title>
+</head>
+<body>
+		{% for movie,i in session %}
+			<br><br><br><br><br>
+			<a href="http://localhost:5000/{{ name }}/movie/{{ movie_name }}">
+					<img src="{{ filename[i] }}" height="200" width="400" align="left" alt="War">
+					<h2>{{ movie['movie_name'] }}</h2><br>
+					<br><br><br><br><br>
+		{% endfor %}
+	
+</body>
+</html>
