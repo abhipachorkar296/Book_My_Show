@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Enter the details of your theatre</title>
+</head>
+<body>
+	<h1><center>ENTER THE DETAILS OF YOUR THEATRE</center></h1>
+	<br><br>
+	<center>
+		<form method="post" action="http://localhost:5000/theatredetails/{{ username }}/input">
+			Name:
+			<input type="text" name="name">
+			Address:
+			<input type="text" name="address">
+			<input type="submit" name="Submit" value="Submit">
+		</form>
+	</center>	
+</body>
+</html>

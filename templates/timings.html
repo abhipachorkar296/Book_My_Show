@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Enter timings</title>
+</head>
+<body>
+	<CENTER>
+		<h1>
+			Enter the show timings for {{ mov_name }}:<br>
+		</h1>
+		<form method="post" action="http://localhost:5000/theatre_owner/{{ name }}/{{ mov_name }}/{{ nos }}">
+		{% for i in range(nos) %}
+			<input type="text" name="{{ i }}">
+		{% endfor %}
+		<br>
+		<input type="submit" value="Send Add Request">
+		</form>
+	</CENTER>
+</body>
+</html>

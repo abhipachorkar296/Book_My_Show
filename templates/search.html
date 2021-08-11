@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ lang }} movies this week</title>
+</head>
+<body>
+	<center><h3>{{ lang }} movies this week</h3></center><br>
+	<ul>
+		{% for i in range(0,l) %}
+		<li>
+			<a href="http://localhost:5000/{{name}}/movie/{{ lang_mov[i]['URL'] }}">
+					<img src="{{ full_filename[i] }}" height="200" width="400" align="left" alt="{{ lang_mov[i]['Name'] }}">
+					<h2>{{ lang_mov[i]['Name'] }}</h2>
+					<br><br><br><br><br><br>
+			</a>
+		</li>
+		{% endfor %}
+	</ul>
+	
+</body>
+</html>

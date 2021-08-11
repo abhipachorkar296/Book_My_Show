@@ -4,13 +4,28 @@
 	<title>Movies List for this week</title>
 </head>
 <body>
-		{% for movie,i in session %}
+	<!-- keep name and movies as variables in app.py -->
+		<center><h1>Welcome {{name}}</h1></center>
+		<p style="text-align:right;"><a href="http://localhost:5000/{{ name }}/edit_profile"> Edit profile</a></p><br>
+		<h2>Movies list this week:</h2>
+
+			<br>
+		<center>
+			<form method="post" action="http://localhost:5000/{{ name }}/searchresult">
+ 				<label for="searchbar">
+ 					<h4>Search by language</h4>
+ 				</label><br>
+ 				<input type="text" name="searchbar" id="searchbar">
+ 				<input type="submit" value="Submit">
+			</form>
+		</center>
+
+		{% for movie,i in info|zip(range(size)) %}
 			<br><br><br><br><br>
-			<a href="http://localhost:5000/{{ name }}/movie/{{ movie_name }}">
-					<img src="{{ filename[i] }}" height="200" width="400" align="left" alt="War">
-					<h2>{{ movie['movie_name'] }}</h2><br>
+			<a href="http://localhost:5000/{{ name }}/movie/{{ movie['URL'] }}">
+					<img src="{{ full_filename[i] }}" height="200" width="400" align="left" alt="War">
+					<h2>{{ movie['Name'] }}</h2><br>
 					<br><br><br><br><br>
 		{% endfor %}
-	
 </body>
 </html>

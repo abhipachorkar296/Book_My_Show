@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Edit Profile
+	</title>
+</head>
+<body>
+	<center><h2>EDIT PROFILE</h2></center>
+	<br>
+	<form method="post" action="http://localhost:5000/{{ info[0]['username'] }}/edited">
+          Name:
+          <input type="text" name="name" value="{{ info[0]['Name'] }}"><br>
+          Username:
+          <input type="text" name="username" value="{{ info[0]['username'] }}"><br>
+          Password:
+          <input type="password" name="password" value="{{ info[0]['Password'] }}"><br>
+          Type of user:<br>
+          <input type="radio" name="user" value="Customer" checked> Costumer<br>
+          <input type="radio" name="user" value="Admin"> Admin<br>
+          <input type="radio" name="user" value="Theatre Owner"> Theatre Owner <br>
+          Email address:
+          <input type="text" name="email" value="{{ info[0]['Email'] }}"><br>
+          <input type="submit" value="Submit">
+      </form>
+</body>
+</html>

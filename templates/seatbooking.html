@@ -5,7 +5,7 @@
 </head>
 <body>
 	<center>
-		<form method="POST" action>
+		<form method="post" action="http://localhost:5000/{{ name }}/movie/{{ mov_name }}/{{ Theatre_ID }}/{{ time }}/booked">
 		{% for dict in seats %}
 		<br>
 			{% for seat,status in dict.items() %}

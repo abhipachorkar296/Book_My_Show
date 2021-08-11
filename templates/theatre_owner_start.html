@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome {{ name }}</title>
+</head>
+<body>
+	<center>
+		<h1>
+			Welcome {{ name }}
+		</h1>
+		<h2>
+			Your theatre is {{ theatre_name[0]['Name'] }}
+		</h2>
+		<form method="post" name="form-name" action="http://localhost:5000/theatre_owner/{{ name }}/request">
+			<h3>
+				Add a movie:
+			</h3>
+		Movie Name:
+          <input type="text" name="name"><br><br>
+          Description:
+          <input type="text" name="description"><br><br>
+          Cast:
+          <input type="text" name="cast"><br><br>
+          Rating:
+          <input type="text" name="rating"><br><br>
+          Language:
+          <input type="text" name="language"><br><br>
+          Image Location:
+          <input type="text" name="location"><br><br>
+          Number of shows in a day:
+          <input type="text" name="nos"><br><br>
+          <input type="submit" name="submit_button" value="Add Movie Timings">
+		</form>
+
+		<form method="post" name="form-name" action="http://localhost:5000/theatre_owner/{{ name }}/request">
+			<h3>
+				Remove a movie:
+			</h3>
+		Movie Name:
+		<select name='movies'>
+		{% for movie in movies %}
+          <option value="{{ movie['Name'] }}">{{ movie['Name'] }}</option>
+        {% endfor %}
+        </select>
+          <input type="submit" name="submit_button" value="Submit Delete Request"><br>
+		</form>
+	</center>
+</body>
+</html>

@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Welcome to the Login page</title>
+  <title> Welcome to the Signup Page</title>
 </head>
 <body>
-	<h1><center>Log in</center></h1>
-	<form method="post" action="http://localhost:5000/loggingin">
+  <h1><center>
+      Enter your details</h1>
+      <form method="post" action="http://localhost:5000/signedin">
+          Name:
+          <input type="text" name="name"><br>
           Username:
           <input type="text" name="username"><br>
           Password:
           <input type="password" name="password"><br>
+          Type of user:<br>
           <input type="radio" name="user" value="Customer" checked> Customer<br>
           <input type="radio" name="user" value="Admin"> Admin<br>
           <input type="radio" name="user" value="Theatre Owner"> Theatre Owner <br>
+          Email address:
+          <input type="text" name="email"><br>
           <input type="submit" value="Submit">
       </form>
-      <h2><center>OR</center></h2>
-      <button><center><a href="http://localhost:5000/signup">Signup!</center></button>
+  </center>
 </body>
 </html>

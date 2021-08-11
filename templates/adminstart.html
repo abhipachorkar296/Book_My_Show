@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Welcome {{ usern }}
+	</title>
+</head>
+<body>
+	<center>
+		<h1>
+			WELCOME {{ usern }}
+		</h1>
+	</center>
+	<br><br><br>
+	<div align="left">
+		<h2>
+			The movies requested to <b>add</b> are:
+		</h2>
+			<form method="post" action="http://localhost:5000/admin/<name>/action">
+				{% for add in add_req: %}
+				<input type="checkbox" name="add" value="{{ add['Name'] }} {{ add['URL'] }} {{ add['Theatre_ID'] }}">{{ add['Name'] }} Reqesuted by {{ add['URL'] }} in {{ add['Theatre_Name'] }}<br>
+				{% endfor %}
+				<input type="submit" name="submit_button" value="Add Movies">
+			</form>
+	</div>
+	<br><br><br>
+	<div align="left">
+		<h2>
+			The movies requested to <b>delete</b> are:
+		</h2>
+			<form method="post" action="http://localhost:5000/admin/<name>/action">
+				{% for del in del_req: %}
+				<input type="checkbox" name="del" value="{{ del['Name'] }} {{ del['URL'] }} {{ del['Theatre_ID'] }}">{{ del['Name'] }} Reqesuted by {{ del['URL'] }} in {{ del['Theatre_Name'] }}<br>
+				{% endfor %}
+				<input type="submit" name="submit_button" value="Delete Movies">
+			</form>
+	</div>
+		
+</body>
+</html>
